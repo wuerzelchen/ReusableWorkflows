@@ -1,0 +1,14 @@
+# initialize sample workflow
+name: Initialize
+on:
+  workflow_dispatch:
+jobs:
+  initialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Init Tasks
+        run: |
+          echo "Initializing tasks..."
