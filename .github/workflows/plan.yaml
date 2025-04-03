@@ -1,0 +1,26 @@
+# terraform plan workflow example
+name: Plan
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      tfvars:
+        required: false
+        type: string
+      backend_config:
+        required: false
+        type: string
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Terraform Plan
+        id: plan
+        run: |
+          echo "Planning Terraform..."
+          echo "Environment: ${{ inputs.environment }}" 
