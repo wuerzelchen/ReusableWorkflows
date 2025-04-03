@@ -1,7 +1,7 @@
 # initialize sample workflow
 name: Initialize
 on:
-  workflow_dispatch:
+  workflow_call:
 jobs:
   initialize:
     runs-on: ubuntu-latest
