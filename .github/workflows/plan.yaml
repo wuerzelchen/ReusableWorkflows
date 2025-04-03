@@ -12,6 +12,10 @@ on:
       backend_config:
         required: false
         type: string
+    outputs:
+      environment:
+        description: 'The target environment for the plan'
+        value: ${{ inputs.environment }}
 jobs:
   plan:
     runs-on: ubuntu-latest
